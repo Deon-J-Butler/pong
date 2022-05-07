@@ -104,6 +104,8 @@
             } else {
                 paddle2Y -= 7;
             }
+        } else if (ballX > canvas.width*.97) {
+            paddle2Y = ballY;
         }
     }
 
@@ -115,6 +117,7 @@
         cpuMovement()
 
         ballX += ballSpeedX;
+
         if (ballX < paddle1X + PADDLE_WIDTH) {
             if (paddle1Y <= ballY && ballY <= (paddle1Y + PADDLE_HEIGHT)) {
                 if (ballSpeedX <= -10) {
@@ -137,12 +140,13 @@
                 } else {
                     ballSpeedX = -ballSpeedX * 1.1
                 }
-                var deltaY = ballY - (paddle2Y + (PADDLE_HEIGHT/2));
+                var deltaY = ballY - (paddle2Y + (PADDLE_HEIGHT / 2));
                 ballSpeedY = deltaY * .31;
             } else {
                 cpuScore++;
                 ballReset();
-            }*/
+            }
+             */
 
         } else if (ballX > paddle2X) {
             if (paddle2Y <= ballY && ballY <= (paddle2Y + PADDLE_HEIGHT)) {
